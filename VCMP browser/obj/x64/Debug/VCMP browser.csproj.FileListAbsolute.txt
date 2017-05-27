@@ -1,0 +1,10 @@
+C:\vcmpbrws\VCMP browser\VCMP browser\bin\x64\Debug\VCMP browser.exe.config
+C:\vcmpbrws\VCMP browser\VCMP browser\bin\x64\Debug\VCMP browser.exe
+C:\vcmpbrws\VCMP browser\VCMP browser\bin\x64\Debug\VCMP browser.pdb
+C:\vcmpbrws\VCMP browser\VCMP browser\bin\x64\Debug\Newtonsoft.Json.dll
+C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP browser.csprojResolveAssemblyReference.cache
+C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP_browser.Init.resources
+C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP_browser.Properties.Resources.resources
+C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP browser.csproj.GenerateResource.Cache
+C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP browser.exe
+C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP browser.pdb

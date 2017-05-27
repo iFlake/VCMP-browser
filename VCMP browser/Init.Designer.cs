@@ -33,6 +33,7 @@
             this.LabelTitle = new System.Windows.Forms.Label();
             this.LabelWait = new System.Windows.Forms.Label();
             this.LabelProcess = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +45,8 @@
             this.panel1.Controls.Add(this.LabelTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.MaximumSize = new System.Drawing.Size(398, 138);
+            this.panel1.MinimumSize = new System.Drawing.Size(398, 138);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(398, 138);
             this.panel1.TabIndex = 0;
@@ -65,7 +68,7 @@
             // LabelWait
             // 
             this.LabelWait.ForeColor = System.Drawing.Color.White;
-            this.LabelWait.Location = new System.Drawing.Point(0, 55);
+            this.LabelWait.Location = new System.Drawing.Point(0, 60);
             this.LabelWait.Name = "LabelWait";
             this.LabelWait.Size = new System.Drawing.Size(398, 19);
             this.LabelWait.TabIndex = 1;
@@ -74,13 +77,18 @@
             // 
             // LabelProcess
             // 
+            this.LabelProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelProcess.ForeColor = System.Drawing.Color.White;
-            this.LabelProcess.Location = new System.Drawing.Point(0, 74);
+            this.LabelProcess.Location = new System.Drawing.Point(0, 79);
             this.LabelProcess.Name = "LabelProcess";
             this.LabelProcess.Size = new System.Drawing.Size(398, 19);
             this.LabelProcess.TabIndex = 2;
             this.LabelProcess.Text = "Initializing";
             this.LabelProcess.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // Init
             // 
@@ -112,6 +120,7 @@
         private System.Windows.Forms.Label LabelTitle;
         private System.Windows.Forms.Label LabelWait;
         private System.Windows.Forms.Label LabelProcess;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

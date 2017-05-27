@@ -33,8 +33,16 @@ namespace VCMP_browser
 
         private void Init_Shown(object sender, EventArgs e)
         {
-            LabelProcess.Text = "Reading configuration file";
-            
+
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            this.Invoke(new Action(() => { LabelProcess.Text = "Reading configuration file"; }));
+            ConfigurationManager.Load();
+
+            this.Invoke(new Action(() => { LabelProcess.Text = "Checking for updates"; }));
         }
     }
 }

@@ -20,19 +20,15 @@ namespace VCMP_browser
 
         public string mViceCityDirectory = "";
 
-        public string mNickname = "";
-        public Password[] mPassword;
-    }
+        public Dictionary<string, string> mInstalledVersions;
 
-    public class Password
-    {
-        string mHost = "";
-        string mPassword = "";
+        public string mNickname = "";
+        public Dictionary<string, string> mPassword;
     }
 
     public static class ConfigurationManager
     {
-        public static Configuration mConfiguration;
+        public static Configuration mConfiguration = new Configuration();
 
         public static void Save()
         {
