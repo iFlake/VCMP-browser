@@ -29,12 +29,12 @@ namespace VCMP_browser
             request.password = mUpdaterPassword;
             request.versions = mInstalledVersions;
 
-            string serial = Newtonsoft.Json.JsonConvert.SerializeObject(request) + "\n\n------------------------fccbef9bbb9a1ec3--";
+            string serial = "------------------------fccbef9bbb9a1ec3\nContent-Disposition: form-data; name=\"json\"\n\n" + Newtonsoft.Json.JsonConvert.SerializeObject(request) + "\n\n------------------------fccbef9bbb9a1ec3--" ;
 
             WebClient client = new WebClient();
-            client.Headers[HttpRequestHeader.ContentType] = "multipart/form-data; boundary=------------------------fccbef9bbb9a1ec3--";
+            client.Headers[HttpRequestHeader.ContentType] = "multipart/form-data; boundary=------------------------fccbef9bbb9a1ec3";
             string result = client.UploadString(mUpdater + "/check", "POST", serial);
-
+            System.IO.File.WriteAllText(System.Windows.Forms.Application.StartupPath + "/mVCMPConfig.json", serial);
             System.Windows.Forms.MessageBox.Show(serial);
             System.Windows.Forms.MessageBox.Show(result);
             return result.Split('|');

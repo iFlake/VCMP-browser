@@ -42,8 +42,12 @@ namespace VCMP_browser
             ConfigurationManager.Load();
 
             this.Invoke(new Action(() => { LabelProcess.Text = "Checking for updates"; }));
-            UpdateManager updater = new UpdateManager(ConfigurationManager.mConfiguration.mUpdate.mURL, ConfigurationManager.mConfiguration.mUpdate.mPassword, ConfigurationManager.mConfiguration.mInstalledVersions);
-            MessageBox.Show(updater.CheckUpdates().ToString());
+
+            this.Invoke(new Action(() => { LabelProcess.Text = "No update functionality"; }));
+
+            this.Invoke(new Action(() => { LabelProcess.Text = "Transferring over"; }));
+
+            this.Invoke(new Action(() => { Dashboard dashboard = new Dashboard(); dashboard.Show(); Hide(); }));
         }
     }
 }

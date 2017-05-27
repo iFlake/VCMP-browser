@@ -8,3 +8,4 @@ C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP_browser.Properties.Reso
 C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP browser.csproj.GenerateResource.Cache
 C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP browser.exe
 C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP browser.pdb
+C:\vcmpbrws\VCMP browser\VCMP browser\obj\x64\Debug\VCMP_browser.Dashboard.resources

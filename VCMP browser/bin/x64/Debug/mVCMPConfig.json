@@ -14,9 +14,7 @@
   "mViceCityDirectory": {
     "mPath": ""
   },
-  "mInstalledVersions": {
-    "04rel004": "00000000"
-  },
+  "mInstalledVersions": {},
   "mServerConfiguration": {
     "mNickname": "",
     "mNicknameOverrides": [],
