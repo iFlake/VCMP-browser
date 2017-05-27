@@ -33,8 +33,7 @@ namespace VCMP_browser
 
         private void Init_Shown(object sender, EventArgs e)
         {
-
-
+            backgroundWorker1.RunWorkerAsync();
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
