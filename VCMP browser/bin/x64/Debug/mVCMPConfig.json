@@ -1,0 +1,26 @@
+{
+  "mMasterlist": {
+    "mURL": "http://vcmp.master.cloudwards.es:10732"
+  },
+  "mUpdate": {
+    "mURL": "http://u04.maxorator.com",
+    "mPassword": "",
+    "mCheck": true
+  },
+  "mDownloadMirror": {
+    "mURL": "https://vcmp.mirror.cloudwards.es",
+    "mCheck": true
+  },
+  "mViceCityDirectory": {
+    "mPath": ""
+  },
+  "mInstalledVersions": {
+    "04rel004": "00000000"
+  },
+  "mServerConfiguration": {
+    "mNickname": "",
+    "mNicknameOverrides": [],
+    "mPassword": "",
+    "mPasswordOverrides": []
+  }
+}

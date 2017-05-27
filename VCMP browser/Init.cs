@@ -42,6 +42,8 @@ namespace VCMP_browser
             ConfigurationManager.Load();
 
             this.Invoke(new Action(() => { LabelProcess.Text = "Checking for updates"; }));
+            UpdateManager updater = new UpdateManager(ConfigurationManager.mConfiguration.mUpdate.mURL, ConfigurationManager.mConfiguration.mUpdate.mPassword, ConfigurationManager.mConfiguration.mInstalledVersions);
+            MessageBox.Show(updater.CheckUpdates().ToString());
         }
     }
 }

@@ -13,9 +13,9 @@ namespace VCMP_browser
         public string mUpdater;
         public string mUpdaterPassword;
 
-        public NameValueCollection mInstalledVersions;
+        public object mInstalledVersions;
 
-        UpdateManager(string updater, string password, NameValueCollection installed_versions)
+        public UpdateManager(string updater, string password, object installed_versions)
         {
             mUpdater = updater;
             mUpdaterPassword = password;
@@ -23,17 +23,28 @@ namespace VCMP_browser
             mInstalledVersions = installed_versions;
         }
 
-        public string CheckUpdates()
+        public string[] CheckUpdates()
         {
-            string serial = Newtonsoft.Json.JsonConvert.SerializeObject(mInstalledVersions);
+            UpdateRequest request = new UpdateRequest();
+            request.password = mUpdaterPassword;
+            request.versions = mInstalledVersions;
 
+            string serial = Newtonsoft.Json.JsonConvert.SerializeObject(request) + "\n\n------------------------fccbef9bbb9a1ec3--";
 
             WebClient client = new WebClient();
-            client.Headers[HttpRequestHeader.ContentType] = "application/json";
-            string result = client.UploadString(mUpdater, "POST", serial);
+            client.Headers[HttpRequestHeader.ContentType] = "multipart/form-data; boundary=------------------------fccbef9bbb9a1ec3--";
+            string result = client.UploadString(mUpdater + "/check", "POST", serial);
 
-            return result;
+            System.Windows.Forms.MessageBox.Show(serial);
+            System.Windows.Forms.MessageBox.Show(result);
+            return result.Split('|');
         }
+    }
+
+    public class UpdateRequest
+    {
+        public string password;
+        public dynamic versions;
     }
 
     public static class Updater

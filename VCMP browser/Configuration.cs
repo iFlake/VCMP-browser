@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace VCMP_browser
         public UpdateConfiguration mUpdate = new UpdateConfiguration();
         public DownloadMirrorConfiguration mDownloadMirror = new DownloadMirrorConfiguration();
         public ViceCityDirectoryConfiguration mViceCityDirectory = new ViceCityDirectoryConfiguration();
-        public NameValueCollection mInstalledVersions = new NameValueCollection();
+        public dynamic mInstalledVersions = new ExpandoObject();
         public ServerConfiguration mServerConfiguration = new ServerConfiguration();
     }
 
@@ -44,10 +45,22 @@ namespace VCMP_browser
     public class ServerConfiguration
     {
         public string mNickname = "";
-        public NameValueCollection mNicknameOverrides = new NameValueCollection();
+        public NicknameOverrideConfiguration[] mNicknameOverrides = new NicknameOverrideConfiguration[0];
 
         public string mPassword = "";
-        public NameValueCollection mPasswordOverrides = new NameValueCollection();
+        public PasswordOverrideConfiguration[] mPasswordOverrides = new PasswordOverrideConfiguration[0];
+    }
+
+    public class NicknameOverrideConfiguration
+    {
+        public string mServer = "";
+        public string mNickname = "";
+    }
+
+    public class PasswordOverrideConfiguration
+    {
+        public string mServer = "";
+        public string mPassword = "";
     }
 
     public static class ConfigurationManager
