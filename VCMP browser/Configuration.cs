@@ -36,13 +36,27 @@ namespace VCMP_browser
 
         public static void Save()
         {
+            Validate();
+
             string serial = Newtonsoft.Json.JsonConvert.SerializeObject(mConfiguration);
             System.IO.File.WriteAllText(Application.StartupPath + "/mVCMPConfig.json", serial);
         }
 
         public static void Load()
         {
+            Validate();
 
+            string serial = System.IO.File.ReadAllText(Application.StartupPath + "/mVCMPConfig.json");
+            mConfiguration = Newtonsoft.Json.JsonConvert.DeserializeObject<Configuration>(serial);
+        }
+
+        private static void Validate()
+        {
+            if (System.IO.File.Exists(Application.StartupPath + "/mVCMPConfig.json") == false)
+            {
+                System.IO.File.Create(Application.StartupPath + "/mVCMPConfig.json");
+                Save();
+            }
         }
     }
 }
