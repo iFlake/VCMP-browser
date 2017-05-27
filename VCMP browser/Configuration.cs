@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,10 @@ namespace VCMP_browser
 
         public string mViceCityDirectory = "";
 
-        public Dictionary<string, string> mInstalledVersions;
+        public NameValueCollection mInstalledVersions;
 
         public string mNickname = "";
-        public Dictionary<string, string> mPassword;
+        public NameValueCollection mPassword;
     }
 
     public static class ConfigurationManager
